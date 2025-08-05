@@ -1,179 +1,155 @@
 # DEİDA PSİKOLOJİ - Dr. Defne Yılmaz
 
-Modern, responsive ve kullanıcı dostu bir psikoloji web sitesi. Dr. Defne Yılmaz'ın uzmanlık alanlarını, yayınlarını ve hizmetlerini tanıtan profesyonel bir web sitesi.
+Modern, responsive ve profesyonel web sitesi - Dr. Defne Yılmaz'ın 30 yıllık psikoloji deneyimini yansıtan kapsamlı bir platform.
 
-## 🎨 Tasarım Özellikleri
+## 🌟 Özellikler
 
-- **Renk Paleti**: Turkuvaz ve yeşil tonları
-- **Tasarım Stili**: Modern, şık ve sade
-- **Responsive**: Mobil, tablet ve masaüstü uyumlu
-- **Animasyonlar**: Smooth scroll, hover efektleri, fade-in animasyonları
+### 📱 Responsive Tasarım
+- **Mobile-first** yaklaşım
+- **Tablet** ve **Desktop** uyumlu
+- Modern CSS Grid ve Flexbox kullanımı
 
-## 📱 Sayfalar
+### 🎨 Modern UI/UX
+- **Turkuaz ve yeşil** renk paleti
+- Smooth animasyonlar ve geçişler
+- Font Awesome ikonları
+- Google Fonts (Inter) kullanımı
 
-1. **Ana Sayfa** (`index.html`)
-   - Hero section (Dr. Defne Yılmaz'ın fotoğrafı ile)
-   - Hakkımda bölümü
-   - Yetkinlik alanları (7 farklı uzmanlık)
-   - Üstün yetenekliler bölümü
+### 📄 Sayfa Yapısı
+- **Ana Sayfa** - Hero section, hakkımda, uzmanlık alanları
+- **Hakkımda** - Detaylı biyografi ve deneyimler
+- **Uzmanlık Alanları** - 8 farklı uzmanlık alanı
+- **Blog** - Makale ve içerik paylaşımı
+- **Podcast/YouTube** - Video içerikler
+- **Etkinlikler** - Seminer ve etkinlikler
+- **Yayınlar** - Akademik yayınlar
+- **İletişim** - İletişim bilgileri ve harita
 
-2. **Blog** (`blog.html`)
-   - 16 farklı blog yazısı
-   - Öne çıkan yazı özelliği
-   - Kategori filtreleme
-   - Responsive grid layout
+### 🔧 Teknik Özellikler
+- **HTML5** semantic markup
+- **CSS3** modern stiller
+- **JavaScript** interaktif özellikler
+- **Font Awesome** ikonlar
+- **Google Maps** entegrasyonu
+- **Responsive** tasarım
 
-3. **Podcasts/YouTube** (`podcasts.html`)
-   - Video içerikler
-   - Kategori filtreleme
-   - Platform linkleri (YouTube, Spotify)
-   - Play button animasyonları
+## 🚀 Kurulum
 
-4. **Etkinlikler & Haberler** (`events.html`)
-   - Yaklaşan etkinlikler
-   - Güncel haberler
-   - Kayıt formları
-   - Etkinlik detayları
+1. Repository'yi klonlayın:
+```bash
+git clone https://github.com/yunuseduran/deida-psikoloji.git
+cd deida-psikoloji
+```
 
-5. **Yayınlar** (`publications.html`)
-   - Kitap listesi
-   - Bilimsel makaleler
-   - Yayın önerileri
-   - PDF indirme linkleri
+2. Local server başlatın:
+```bash
+python -m http.server 8000
+```
 
-6. **İletişim** (`contact.html`)
-   - İletişim formu
-   - İletişim bilgileri
-   - Çalışma saatleri
-   - Sosyal medya linkleri
-
-## 🛠️ Teknolojiler
-
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling, CSS Grid, Flexbox
-- **JavaScript**: Interactive features, form validation
-- **Font Awesome**: İkonlar
-- **Google Fonts**: Inter font ailesi
-
-## 🚀 Özellikler
-
-### Responsive Tasarım
-- Mobil öncelikli tasarım
-- Breakpoint'ler: 768px, 480px
-- Esnek grid sistemleri
-
-### Navigasyon
-- Fixed header
-- Smooth scroll
-- Mobile hamburger menu
-- Active link highlighting
-
-### Animasyonlar
-- Hover efektleri
-- Fade-in animasyonları
-- Loading states
-- Success messages
-
-### Form Validasyonu
-- Email format kontrolü
-- Required field validation
-- Success/error mesajları
-- Loading states
+3. Tarayıcıda açın:
+```
+http://localhost:8000
+```
 
 ## 📁 Dosya Yapısı
 
 ```
-deida/
-├── index.html              # Ana sayfa
-├── blog.html               # Blog sayfası
-├── podcasts.html           # Podcasts/YouTube sayfası
-├── events.html             # Etkinlikler sayfası
-├── publications.html       # Yayınlar sayfası
-├── contact.html            # İletişim sayfası
-├── styles.css              # Ana CSS dosyası
-├── script.js               # JavaScript dosyası
-├── images/
-│   ├── logo.png            # Site logosu
-│   └── profiles.jpeg       # Dr. Defne Yılmaz fotoğrafı
-└── README.md               # Bu dosya
+deida-psikoloji/
+├── index.html                 # Ana sayfa
+├── assets/
+│   ├── css/
+│   │   └── styles.css        # Ana stil dosyası
+│   ├── js/
+│   │   └── script.js         # JavaScript dosyası
+│   └── images/
+│       ├── logo.png          # Logo
+│       └── profiles.jpeg     # Profil fotoğrafı
+├── sayfalar/
+│   ├── hakkimda.html         # Hakkımda sayfası
+│   ├── blog.html             # Blog sayfası
+│   ├── podcast-youtube.html  # Podcast/YouTube sayfası
+│   ├── etkinlikler.html      # Etkinlikler sayfası
+│   ├── yayinlar.html         # Yayınlar sayfası
+│   └── iletisim.html         # İletişim sayfası
+└── uzmanlik-alanlari/
+    ├── uzmanlik-ana.html     # Uzmanlık ana sayfası
+    ├── ustun-yetenekliler.html
+    ├── psikolojik-danismanlik.html
+    ├── grupla-danismanlik.html
+    ├── stres-travma.html
+    ├── bagimlilik.html
+    ├── doga-temelli.html
+    └── cocuk-ergen.html
 ```
 
-## 🎯 İçerik Özellikleri
+## 🎯 Uzmanlık Alanları
 
-### Ana Sayfa
-- **Hero Section**: Dr. Defne Yılmaz'ın profil fotoğrafı ve tanıtım
-- **Hakkımda**: Eğitim, deneyim, uzmanlık alanları
-- **Yetkinlik Alanları**: 7 farklı psikolojik danışmanlık alanı
-- **Üstün Yetenekliler**: Özel danışmanlık hizmetleri
+1. **Üstün Yetenekliler Danışmanlığı**
+2. **Psikolojik Danışma**
+3. **Grupla Psikolojik Danışma**
+4. **Stres ve Travma Danışmanlığı**
+5. **Bağımlılık Danışmanlığı**
+6. **Doğa Temelli Danışmanlık**
+7. **Çocuk ve Ergen Ruh Sağlığı**
 
-### Blog
-- **16 Blog Yazısı**: Resimdeki tüm başlıklar dahil
-- **Kategoriler**: Psikolojik destek, travma, üstün yeteneklilik vb.
-- **Öne Çıkan Yazı**: "Yetişkinin Çocukluk Çağı Travmaları Üzerine"
+## 🎨 Renk Paleti
 
-### Podcasts/YouTube
-- **Video İçerikler**: Kitap önerileri, terapi teknikleri
-- **Kategori Filtreleme**: Dinamik filtreleme sistemi
-- **Platform Linkleri**: YouTube ve Spotify entegrasyonu
-
-### Etkinlikler
-- **Yaklaşan Etkinlikler**: Seminerler, atölyeler, konferanslar
-- **Haberler**: Güncel psikoloji dünyasından haberler
-- **Kayıt Sistemi**: Etkinlik kayıt formları
-
-### Yayınlar
-- **Kitaplar**: 3 ana kitap (2015, 2022, 2023)
-- **Makaleler**: Bilimsel yayınlar
-- **Yayın Önerileri**: Sidebar'da önerilen okumalar
-
-### İletişim
-- **İletişim Formu**: Tam fonksiyonel form
-- **İletişim Bilgileri**: E-posta, telefon, adres
-- **Çalışma Saatleri**: Detaylı çalışma programı
-
-## 🌐 Kullanım
-
-1. Dosyaları web sunucusuna yükleyin
-2. `index.html` dosyasını açın
-3. Tüm sayfalar ve özellikler çalışır durumda olacaktır
-
-## 📧 İletişim Bilgileri
-
-- **E-posta**: info@deidapsikoloji.com
-- **Telefon**: (+90) 555 123 45 67
-- **Adres**: DEİDA PSİKOLOJİ Merkezi, Kadıköy / İstanbul
-
-## 🔧 Özelleştirme
-
-### Renk Değişikliği
-`styles.css` dosyasındaki CSS değişkenlerini düzenleyin:
 ```css
 :root {
-    --primary-color: #20B2AA; /* Turkuvaz */
-    --secondary-color: #2E8B57; /* Deniz Yeşili */
-    --accent-color: #48D1CC; /* Orta Turkuvaz */
+    --primary-color: #20B2AA;    /* Turkuaz */
+    --secondary-color: #228B22;  /* Yeşil */
+    --accent-color: #FF6B35;     /* Turuncu */
+    --white: #FFFFFF;
+    --gray: #666666;
+    --light-gray: #F8F9FA;
 }
 ```
 
-### İçerik Güncelleme
-- HTML dosyalarında ilgili bölümleri düzenleyin
-- Resimleri `images/` klasöründe değiştirin
-- İletişim bilgilerini güncelleyin
+## 📱 Responsive Breakpoints
 
-## 📱 Responsive Breakpoint'ler
+- **Mobile**: 480px ve altı
+- **Tablet**: 768px ve altı
+- **Desktop**: 768px üstü
 
-- **Desktop**: 1200px+
-- **Tablet**: 768px - 1199px
-- **Mobile**: 480px - 767px
-- **Small Mobile**: 480px altı
+## 🔧 Özellikler
 
-## 🎨 Tasarım Prensipleri
+### Header
+- Top-bar (iletişim ve sosyal medya)
+- Navigation (dropdown menü)
+- Responsive mobile menu
 
-- **Minimalist**: Sade ve temiz tasarım
-- **Kullanıcı Dostu**: Kolay navigasyon
-- **Profesyonel**: Güven veren görünüm
-- **Erişilebilir**: Tüm kullanıcılar için uygun
+### Footer
+- 4 bölümlü yapı
+- Sosyal medya linkleri
+- Google Maps entegrasyonu
+- İletişim bilgileri
+
+### JavaScript Özellikleri
+- Smooth scrolling
+- Mobile navigation toggle
+- Fade-in animasyonlar
+- Active link highlighting
+- Form validation
+
+## 👨‍💻 Geliştirici
+
+**Yunus Emre Duran**
+- Modern web teknolojileri
+- Responsive tasarım
+- UI/UX odaklı geliştirme
+
+## 📞 İletişim
+
+**Dr. Defne Yılmaz**
+- Email: info@deidapsikoloji.com
+- Telefon: (+90) 555 123 45 67
+- WhatsApp: +90 555 123 45 67
+- Adres: Çanakkale, Türkiye
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ---
 
-**DEİDA PSİKOLOJİ** - Dr. Defne Yılmaz'ın uzmanlığını ve deneyimini yansıtan modern web sitesi. 
+**DEİDA PSİKOLOJİ** - 30 yıllık deneyim ve uzmanlık ile psikolojik sağlık hizmetleri. 
