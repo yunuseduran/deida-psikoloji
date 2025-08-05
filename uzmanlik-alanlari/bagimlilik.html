@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bağımlılık Danışmanlığı - Dr. Defne Yılmaz | DEİDA PSİKOLOJİ</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-content {
+            padding: 80px 0;
+        }
+
+        .service-section {
+            margin-bottom: 60px;
+        }
+
+        .service-section h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .service-section h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .service-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .step-item {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--accent-color) 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-btn:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-hero p {
+                font-size: 1.1rem;
+            }
+
+            .service-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-contact">
+                    <a href="https://wa.me/905551234567" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        +90 555 123 45 67
+                    </a>
+                    <a href="mailto:info@deidapsikoloji.com">
+                        <i class="fas fa-envelope"></i>
+                        info@deidapsikoloji.com
+                    </a>
+                </div>
+                <div class="top-social">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../assets/images/logo.png" alt="DEİDA PSİKOLOJİ Logo" class="logo">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Ana Sayfa</a>
+                <a href="../sayfalar/hakkimda.html" class="nav-link">Hakkımda</a>
+                <div class="nav-item">
+                    <a href="uzmanlik-ana.html" class="nav-link">
+                        Uzmanlık
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <h4>Uzmanlık Alanları</h4>
+                            <p>30 yıllık deneyimle sunduğum hizmetler</p>
+                        </div>
+                        <a href="uzmanlik-ana.html" class="dropdown-item">
+                            <i class="fas fa-th-large"></i>
+                            Tüm Uzmanlık Alanları
+                        </a>
+                        <a href="ustun-yetenekliler.html" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            Üstün Yetenekliler Danışmanlığı
+                        </a>
+                        <a href="psikolojik-danismanlik.html" class="dropdown-item">
+                            <i class="fas fa-comments"></i>
+                            Psikolojik Danışma
+                        </a>
+                        <a href="grupla-danismanlik.html" class="dropdown-item">
+                            <i class="fas fa-users"></i>
+                            Grupla Psikolojik Danışma
+                        </a>
+                        <a href="stres-travma.html" class="dropdown-item">
+                            <i class="fas fa-heart"></i>
+                            Stres ve Travma Danışmanlığı
+                        </a>
+                        <a href="bagimlilik.html" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            Bağımlılık Danışmanlığı
+                        </a>
+                        <a href="doga-temelli.html" class="dropdown-item">
+                            <i class="fas fa-tree"></i>
+                            Doğa Temelli Danışmanlık
+                        </a>
+                        <a href="cocuk-ergen.html" class="dropdown-item">
+                            <i class="fas fa-child"></i>
+                            Çocuk ve Ergen Ruh Sağlığı
+                        </a>
+                    </div>
+                </div>
+                <a href="../sayfalar/blog.html" class="nav-link">Blog</a>
+                <a href="../sayfalar/podcast-youtube.html" class="nav-link">Podcasts/YouTube</a>
+                <a href="../sayfalar/etkinlikler.html" class="nav-link">Etkinlikler</a>
+                <a href="../sayfalar/yayinlar.html" class="nav-link">Yayınlar</a>
+                <a href="../sayfalar/iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Bağımlılık Danışmanlığı</h1>
+            <p>Madde, teknoloji ve davranışsal bağımlılıklar konusunda uzmanlaşmış danışmanlık</p>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <!-- Hizmet Açıklaması -->
+            <div class="service-section">
+                <h2><i class="fas fa-shield-alt"></i> Hizmet Hakkında</h2>
+                <p>Bağımlılık, modern toplumun en ciddi psikolojik sorunlarından biridir. 30 yıllık deneyimimle, madde bağımlılığı, teknoloji bağımlılığı ve davranışsal bağımlılıklar konularında uzmanlaşmış danışmanlık hizmetleri sunuyorum.</p>
+                
+                <p>Bağımlılık, bireylerin yaşamlarını derinden etkileyebilir ve aile ilişkilerini bozabilir. Doğru yaklaşım ve destekle, bağımlılıktan kurtulma mümkündür ve bireyler sağlıklı bir yaşam tarzı benimseyebilirler.</p>
+            </div>
+
+            <!-- Hizmet Alanları -->
+            <div class="service-section">
+                <h2><i class="fas fa-hand-holding-heart"></i> Hizmet Alanları</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h4><i class="fas fa-pills"></i> Madde Bağımlılığı</h4>
+                        <p>Alkol, sigara ve diğer madde bağımlılıklarının tedavisi ve rehabilitasyon süreci.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4><i class="fas fa-mobile-alt"></i> Teknoloji Bağımlılığı</h4>
+                        <p>İnternet, sosyal medya ve oyun bağımlılığı konularında danışmanlık ve tedavi.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4><i class="fas fa-dice"></i> Kumar Bağımlılığı</h4>
+                        <p>Kumar ve bahis bağımlılığı konularında uzmanlaşmış danışmanlık hizmetleri.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4><i class="fas fa-utensils"></i> Yeme Bağımlılığı</h4>
+                        <p>Yeme bozuklukları ve yeme bağımlılığı konularında psikolojik destek.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4><i class="fas fa-users"></i> Aile Danışmanlığı</h4>
+                        <p>Bağımlılık sürecinde aile üyelerine destek ve aile terapisi hizmetleri.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4><i class="fas fa-heart"></i> Relaps Önleme</h4>
+                        <p>Bağımlılık sonrası nüks önleme stratejileri ve sürdürülebilir iyileşme.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Çalışma Süreci -->
+            <div class="service-section">
+                <h2><i class="fas fa-cogs"></i> Çalışma Süreci</h2>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>Değerlendirme</h4>
+                        <p>Bağımlılık türü ve seviyesinin detaylı değerlendirilmesi ve kişiselleştirilmiş plan oluşturma.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>Detoks Süreci</h4>
+                        <p>Güvenli detoks süreci ve fiziksel bağımlılıktan kurtulma aşaması.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>Psikolojik Tedavi</h4>
+                        <p>Bağımlılığın psikolojik nedenlerinin işlenmesi ve davranış değişikliği.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>Rehabilitasyon</h4>
+                        <p>Yeni yaşam tarzı benimseme ve sürdürülebilir iyileşme süreci.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yaklaşım -->
+            <div class="service-section">
+                <h2><i class="fas fa-heart"></i> Yaklaşımım</h2>
+                <p>Bağımlılık danışmanlığında, her bireyin benzersiz olduğu inancıyla hareket ediyorum. Bilişsel davranışçı terapi, motivasyonel görüşme teknikleri ve aile terapisi yaklaşımlarını harmanlayarak, bireyin ihtiyaçlarına en uygun yöntemleri kullanıyorum.</p>
+                
+                <p>Bağımlılıktan kurtulma süreci, kararlılık, destek ve profesyonel rehberlik gerektirir. Amacım, bireylerin bağımlılıktan kurtulmalarına ve sağlıklı bir yaşam tarzı benimsemelerine yardımcı olmak.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Bağımlılıktan Kurtulma Mümkün</h2>
+            <p>Profesyonel destekle bağımlılıktan kurtulabilir ve sağlıklı bir yaşam sürebilirsiniz.</p>
+            <a href="../sayfalar/iletisim.html" class="cta-btn">Randevu Al</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DEİDA PSİKOLOJİ</h3>
+                    <p>Dr. Defne Yılmaz</p>
+                    <p>Uzman Psikolog</p>
+                    <p>30 yıllık deneyim ve uzmanlık</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim Bilgileri</h4>
+                    <p><i class="fas fa-envelope"></i> info@deidapsikoloji.com</p>
+                    <p><i class="fas fa-phone"></i> (+90) 555 123 45 67</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +90 555 123 45 67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Çanakkale, Türkiye</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmet Alanları</h4>
+                    <p><i class="fas fa-star"></i> Üstün Yetenekliler Danışmanlığı</p>
+                    <p><i class="fas fa-comments"></i> Psikolojik Danışma</p>
+                    <p><i class="fas fa-users"></i> Grupla Danışmanlık</p>
+                    <p><i class="fas fa-heart"></i> Stres ve Travma</p>
+                    <p><i class="fas fa-shield-alt"></i> Bağımlılık Danışmanlığı</p>
+                </div>
+                <div class="footer-map">
+                    <h4>Konum</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.4356179388883!2d26.410720675854147!3d40.15485377148293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b1a82cb7342d17%3A0x4223952002858bda!2s%C3%87anakkale%20Onsekiz%20Mart%20%C3%9Cniversitesi%20E%C4%9Fitim%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1754421432315!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DEİDA PSİKOLOJİ. Tüm hakları saklıdır. | Dr. Defne Yılmaz</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html> 

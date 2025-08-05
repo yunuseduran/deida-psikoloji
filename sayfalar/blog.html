@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DEİDA PSİKOLOJİ</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .blog-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 0;
+        }
+        
+        .blog-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+        
+        .blog-content {
+            padding: 30px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .blog-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .blog-excerpt {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+        
+        .read-more:hover {
+            gap: 10px;
+        }
+        
+        .featured-badge {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        
+        .blog-card.featured {
+            position: relative;
+            grid-column: span 2;
+        }
+        
+        .blog-card.featured .blog-image {
+            height: 300px;
+        }
+        
+        .blog-card.featured .blog-title {
+            font-size: 1.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-card.featured {
+                grid-column: span 1;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 60px 0;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-contact">
+                    <a href="https://wa.me/905551234567" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        +90 555 123 45 67
+                    </a>
+                    <a href="mailto:info@deidapsikoloji.com">
+                        <i class="fas fa-envelope"></i>
+                        info@deidapsikoloji.com
+                    </a>
+                </div>
+                <div class="top-social">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../assets/images/logo.png" alt="DEİDA PSİKOLOJİ Logo" class="logo">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hakkimda.html" class="nav-link">Hakkımda</a>
+                <div class="nav-item">
+                    <a href="../uzmanlik-alanlari/uzmanlik-ana.html" class="nav-link">
+                        Uzmanlık
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <h4>Uzmanlık Alanları</h4>
+                            <p>30 yıllık deneyimle sunduğum hizmetler</p>
+                        </div>
+                        <a href="../uzmanlik-alanlari/uzmanlik-ana.html" class="dropdown-item">
+                            <i class="fas fa-th-large"></i>
+                            Tüm Uzmanlık Alanları
+                        </a>
+                        <a href="../uzmanlik-alanlari/ustun-yetenekliler.html" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            Üstün Yetenekliler Danışmanlığı
+                        </a>
+                        <a href="../uzmanlik-alanlari/psikolojik-danismanlik.html" class="dropdown-item">
+                            <i class="fas fa-comments"></i>
+                            Psikolojik Danışma
+                        </a>
+                        <a href="../uzmanlik-alanlari/grupla-danismanlik.html" class="dropdown-item">
+                            <i class="fas fa-users"></i>
+                            Grupla Psikolojik Danışma
+                        </a>
+                        <a href="../uzmanlik-alanlari/stres-travma.html" class="dropdown-item">
+                            <i class="fas fa-heart"></i>
+                            Stres ve Travma Danışmanlığı
+                        </a>
+                        <a href="../uzmanlik-alanlari/bagimlilik.html" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            Bağımlılık Danışmanlığı
+                        </a>
+                        <a href="../uzmanlik-alanlari/doga-temelli.html" class="dropdown-item">
+                            <i class="fas fa-tree"></i>
+                            Doğa Temelli Danışmanlık
+                        </a>
+                        <a href="../uzmanlik-alanlari/cocuk-ergen.html" class="dropdown-item">
+                            <i class="fas fa-child"></i>
+                            Çocuk ve Ergen Ruh Sağlığı
+                        </a>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="podcast-youtube.html" class="nav-link">Podcasts/YouTube</a>
+                <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
+                <a href="yayinlar.html" class="nav-link">Yayınlar</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Psikolojik sağlık ve kişisel gelişim üzerine yazılar</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <article class="blog-card featured">
+                    <div class="featured-badge">Öne Çıkan</div>
+                    <div class="blog-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Mart 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Yetişkinin Çocukluk Çağı Travmaları Üzerine</h2>
+                        <p class="blog-excerpt">Çocukluk döneminde yaşanan travmatik deneyimlerin yetişkinlik dönemindeki etkileri ve bu etkilerle başa çıkma yöntemleri hakkında kapsamlı bir analiz. Travma sonrası büyüme ve iyileşme süreçlerini ele alıyoruz.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Regular Posts -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Mart 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Psikolojik Destek: Ne Zaman, Nasıl, Kimden?</h2>
+                        <p class="blog-excerpt">Psikolojik destek almanın gerektiği durumlar, doğru uzmanı seçme kriterleri ve terapi sürecinde neler bekleyebileceğiniz hakkında rehber niteliğinde bir yazı.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Mart 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Bir Ruh Sağlığı Uzmanından Ne Beklemelisiniz?</h2>
+                        <p class="blog-excerpt">Terapi sürecinde uzmanınızdan bekleyebileceğiniz hizmetler, etik kurallar ve sağlıklı bir terapötik ilişki nasıl kurulur konularını ele alıyoruz.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-angry"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 1 Mart 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Öfke: Ne Zaman Koruyucu, Ne Zaman Tehlikelidir?</h2>
+                        <p class="blog-excerpt">Öfkenin sağlıklı ve sağlıksız yönlerini, öfke yönetimi tekniklerini ve öfkenin psikolojik sağlığımız üzerindeki etkilerini inceliyoruz.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 25 Şubat 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Stresin Etkilerinden Korunma</h2>
+                        <p class="blog-excerpt">Modern yaşamın getirdiği stres faktörlerini tanıma, stresin vücut ve ruh sağlığı üzerindeki etkilerini anlama ve etkili stres yönetimi stratejileri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 20 Şubat 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Üstün Yeteneklilik: Ödül mü, Başa Bela mı?</h2>
+                        <p class="blog-excerpt">Üstün yetenekliliğin avantajları ve zorlukları, üstün yetenekli bireylerin karşılaştığı psikolojik sorunlar ve destek mekanizmaları.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Şubat 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Zorbalıkla Başa Çıkma</h2>
+                        <p class="blog-excerpt">Zorbalığın psikolojik etkileri, zorbalıkla karşılaşan bireylerin kendilerini koruma yöntemleri ve toplumsal farkındalık oluşturma stratejileri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Şubat 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Bir Zorbalık Biçimi Olarak Kurban Suçlayıcılık</h2>
+                        <p class="blog-excerpt">Kurban suçlayıcılığın psikolojik dinamikleri, toplumsal etkileri ve bu zararlı davranış kalıbını değiştirme yolları hakkında detaylı bir analiz.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Şubat 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Çocuklarla Konuşurken</h2>
+                        <p class="blog-excerpt">Çocuklarla etkili iletişim kurma yöntemleri, zor konuları nasıl ele alacağımız ve çocukların duygusal gelişimini destekleme stratejileri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 1 Şubat 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Umut: Zor Zamanlardan Geçerken Nasıl Koruruz?</h2>
+                        <p class="blog-excerpt">Zorlu dönemlerde umudu canlı tutmanın yolları, umudun psikolojik sağlığımız üzerindeki etkileri ve umut dolu bir yaşam sürme stratejileri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-sad-tear"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 25 Ocak 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Depresyon - İntihar: Acı Çekmek (Vazgeçmeden Önce Kendinize Sorun)</h2>
+                        <p class="blog-excerpt">Depresyon belirtileri, intihar düşünceleriyle başa çıkma yöntemleri ve profesyonel yardım alma konusunda rehber niteliğinde bir yazı.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 20 Ocak 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Spor ve Psikolojik Sağlık</h2>
+                        <p class="blog-excerpt">Fiziksel aktivitenin ruh sağlığı üzerindeki olumlu etkileri, spor yapmanın psikolojik faydaları ve mental sağlığı destekleyen egzersiz türleri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Ocak 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Yeme Alışkanlıklarımız ve Psikolojik Sağlık</h2>
+                        <p class="blog-excerpt">Beslenme ile ruh sağlığı arasındaki ilişki, yeme bozuklukları ve sağlıklı beslenme alışkanlıklarının psikolojik etkileri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Ocak 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Radikal Kabul</h2>
+                        <p class="blog-excerpt">Radikal kabulün psikolojik faydaları, zor durumlarla başa çıkma yöntemi olarak kabul etme ve kişisel gelişim sürecindeki rolü.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Ocak 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Yalnızlık</h2>
+                        <p class="blog-excerpt">Modern toplumda yalnızlık sorunu, yalnızlığın psikolojik etkileri ve sağlıklı sosyal ilişkiler kurma yöntemleri hakkında kapsamlı bir analiz.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-chain-broken"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 1 Ocak 2024</span>
+                            <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                        </div>
+                        <h2 class="blog-title">Bağımlılıklar</h2>
+                        <p class="blog-excerpt">Çeşitli bağımlılık türleri, bağımlılığın psikolojik dinamikleri ve bağımlılıktan kurtulma süreçlerinde kullanılan terapi yöntemleri.</p>
+                        <a href="#" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DEİDA PSİKOLOJİ</h3>
+                    <p>Dr. Defne Yılmaz</p>
+                    <p>Uzman Psikolog</p>
+                    <p>30 yıllık deneyim ve uzmanlık</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim Bilgileri</h4>
+                    <p><i class="fas fa-envelope"></i> info@deidapsikoloji.com</p>
+                    <p><i class="fas fa-phone"></i> (+90) 555 123 45 67</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +90 555 123 45 67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Çanakkale, Türkiye</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmet Alanları</h4>
+                    <p><i class="fas fa-star"></i> Üstün Yetenekliler Danışmanlığı</p>
+                    <p><i class="fas fa-comments"></i> Psikolojik Danışma</p>
+                    <p><i class="fas fa-users"></i> Grupla Danışmanlık</p>
+                    <p><i class="fas fa-heart"></i> Stres ve Travma</p>
+                    <p><i class="fas fa-shield-alt"></i> Bağımlılık Danışmanlığı</p>
+                </div>
+                <div class="footer-map">
+                    <h4>Konum</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.4356179388883!2d26.410720675854147!3d40.15485377148293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b1a82cb7342d17%3A0x4223952002858bda!2s%C3%87anakkale%20Onsekiz%20Mart%20%C3%9Cniversitesi%20E%C4%9Fitim%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1754421432315!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DEİDA PSİKOLOJİ. Tüm hakları saklıdır. | Dr. Defne Yılmaz</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html> 

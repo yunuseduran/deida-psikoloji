@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayınlar - DEİDA PSİKOLOJİ</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .publications-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .publications-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .publications-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .publications-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            padding: 80px 0;
+        }
+        
+        .publications-sidebar {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+        
+        .publications-main {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .publication-category {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        .publication-item {
+            background: var(--light-gray);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .publication-title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .publication-year {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .publication-description {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .publication-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .publication-link {
+            padding: 8px 15px;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .publication-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .sidebar-item:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .sidebar-item p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .featured-badge {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .publication-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .publications-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 0;
+            }
+            
+            .publications-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .publication-item {
+                padding: 20px;
+            }
+            
+            .publications-sidebar,
+            .publications-main {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-contact">
+                    <a href="https://wa.me/905551234567" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        +90 555 123 45 67
+                    </a>
+                    <a href="mailto:info@deidapsikoloji.com">
+                        <i class="fas fa-envelope"></i>
+                        info@deidapsikoloji.com
+                    </a>
+                </div>
+                <div class="top-social">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../assets/images/logo.png" alt="DEİDA PSİKOLOJİ Logo" class="logo">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hakkimda.html" class="nav-link">Hakkımda</a>
+                <div class="nav-item">
+                    <a href="../uzmanlik-alanlari/uzmanlik-ana.html" class="nav-link">
+                        Uzmanlık
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <h4>Uzmanlık Alanları</h4>
+                            <p>30 yıllık deneyimle sunduğum hizmetler</p>
+                        </div>
+                        <a href="../uzmanlik-alanlari/uzmanlik-ana.html" class="dropdown-item">
+                            <i class="fas fa-th-large"></i>
+                            Tüm Uzmanlık Alanları
+                        </a>
+                        <a href="../uzmanlik-alanlari/ustun-yetenekliler.html" class="dropdown-item">
+                            <i class="fas fa-star"></i>
+                            Üstün Yetenekliler Danışmanlığı
+                        </a>
+                        <a href="../uzmanlik-alanlari/psikolojik-danismanlik.html" class="dropdown-item">
+                            <i class="fas fa-comments"></i>
+                            Psikolojik Danışma
+                        </a>
+                        <a href="../uzmanlik-alanlari/grupla-danismanlik.html" class="dropdown-item">
+                            <i class="fas fa-users"></i>
+                            Grupla Psikolojik Danışma
+                        </a>
+                        <a href="../uzmanlik-alanlari/stres-travma.html" class="dropdown-item">
+                            <i class="fas fa-heart"></i>
+                            Stres ve Travma Danışmanlığı
+                        </a>
+                        <a href="../uzmanlik-alanlari/bagimlilik.html" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            Bağımlılık Danışmanlığı
+                        </a>
+                        <a href="../uzmanlik-alanlari/doga-temelli.html" class="dropdown-item">
+                            <i class="fas fa-tree"></i>
+                            Doğa Temelli Danışmanlık
+                        </a>
+                        <a href="../uzmanlik-alanlari/cocuk-ergen.html" class="dropdown-item">
+                            <i class="fas fa-child"></i>
+                            Çocuk ve Ergen Ruh Sağlığı
+                        </a>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="podcast-youtube.html" class="nav-link">Podcasts/YouTube</a>
+                <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
+                <a href="yayinlar.html" class="nav-link">Yayınlar</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Publications Hero -->
+    <section class="publications-hero">
+        <div class="container">
+            <h1>Yayınlar</h1>
+            <p>Kitap, makale ve bilimsel çalışmalar</p>
+        </div>
+    </section>
+
+    <!-- Publications Content -->
+    <section class="publications-content">
+        <div class="container">
+            <div class="publications-container">
+                <!-- Sidebar -->
+                <div class="publications-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Yayın Önerileri</h3>
+                        
+                        <div class="sidebar-item">
+                            <h4>Psikolojik Sağlık ve İyilik Hali</h4>
+                            <p>Günlük yaşamda psikolojik sağlığımızı koruma ve geliştirme yöntemleri hakkında kapsamlı bir rehber.</p>
+                        </div>
+                        
+                        <div class="sidebar-item">
+                            <h4>Ekran ve Sosyal Medya Bağımlılığı</h4>
+                            <p>Modern teknolojinin psikolojik etkileri ve sağlıklı dijital alışkanlıklar geliştirme stratejileri.</p>
+                        </div>
+                        
+                        <div class="sidebar-item">
+                            <h4>Sağlıksız İlişkiler: Nasıl Fark Eder, Nasıl İyileşebiliriz?</h4>
+                            <p>Toksik ilişki dinamiklerini tanıma ve sağlıklı ilişkiler kurma yöntemleri.</p>
+                        </div>
+                        
+                        <div class="sidebar-item">
+                            <h4>Duygu Dalgalanmaları</h4>
+                            <p>Duygusal değişkenlikle başa çıkma ve duygusal dengeyi koruma teknikleri.</p>
+                        </div>
+                        
+                        <div class="sidebar-item">
+                            <h4>Kendine Geri Dönmek</h4>
+                            <p>Kişisel kimlik ve benlik algısını yeniden keşfetme süreçleri.</p>
+                        </div>
+                        
+                        <div class="sidebar-item">
+                            <h4>Travma ve Yas: Kişiye Özel</h4>
+                            <p>Bireysel travma ve yas süreçlerinde kişiye özel yaklaşımlar.</p>
+                        </div>
+                        
+                        <div class="sidebar-item">
+                            <h4>Stresle Başa Çıkma</h4>
+                            <p>Etkili stres yönetimi teknikleri ve günlük uygulamalar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="publications-main">
+                    <h2 class="section-title">Yayınlar (Kitap, Bilimsel Makale)</h2>
+                    
+                    <!-- Books Section -->
+                    <div class="publication-category">
+                        <h3 class="category-title">Kitaplar</h3>
+                        
+                        <div class="publication-item">
+                            <div class="publication-image">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="publication-year">2015</div>
+                            <h4 class="publication-title">Üstün Yeteneklilerle Psikolojik Danışma ve Rehberlik Uygulamaları <span class="featured-badge">Öne Çıkan</span></h4>
+                            <p class="publication-description">Üstün yetenekli bireylerle çalışan psikolojik danışmanlar ve eğitimciler için kapsamlı bir rehber. Tanı yöntemleri, danışmanlık teknikleri ve pratik uygulamalar içerir.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                                <span><i class="fas fa-building"></i> Nobel Yayınları</span>
+                                <span><i class="fas fa-language"></i> Türkçe</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Satın Al
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-eye"></i>
+                                    Önizleme
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <div class="publication-image">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="publication-year">2022</div>
+                            <h4 class="publication-title">Stres ve Travma (Fizyolojik Psikoloji)</h4>
+                            <p class="publication-description">Stres ve travmanın fizyolojik temelleri, nörobiyolojik mekanizmalar ve modern tedavi yaklaşımları hakkında detaylı bir inceleme. Hem akademik hem de klinik uygulamalar için değerli bir kaynak.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                                <span><i class="fas fa-building"></i> İstanbul Üniversitesi Yayınları</span>
+                                <span><i class="fas fa-language"></i> Türkçe</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Satın Al
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-eye"></i>
+                                    Önizleme
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <div class="publication-image">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="publication-year">2023</div>
+                            <h4 class="publication-title">Travma Sonrası Büyüme: Zorluklardan Güç Çıkarma</h4>
+                            <p class="publication-description">Travma sonrası büyüme kavramını ele alan, zorlu deneyimlerden nasıl güçlü çıkabileceğimizi gösteren umut verici bir çalışma. Vaka çalışmaları ve pratik uygulamalar içerir.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                                <span><i class="fas fa-building"></i> Pegem Akademi</span>
+                                <span><i class="fas fa-language"></i> Türkçe</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Satın Al
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-eye"></i>
+                                    Önizleme
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Articles Section -->
+                    <div class="publication-category">
+                        <h3 class="category-title">Seçme Makaleler</h3>
+                        
+                        <div class="publication-item">
+                            <div class="publication-year">2024</div>
+                            <h4 class="publication-title">Üstün Yetenekli Çocukların Sosyal Gelişim Süreçlerinde Aile Faktörünün Rolü</h4>
+                            <p class="publication-description">Üstün yetenekli çocukların sosyal gelişim süreçlerinde aile dinamiklerinin etkisini inceleyen longitudinal araştırma. 150 aile ile 3 yıl süren çalışmanın sonuçları.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz, Dr. Ahmet Kaya</span>
+                                <span><i class="fas fa-building"></i> Türk Psikoloji Dergisi</span>
+                                <span><i class="fas fa-language"></i> Türkçe</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-download"></i>
+                                    PDF İndir
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Makale
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <div class="publication-year">2023</div>
+                            <h4 class="publication-title">Doğa Temelli Terapinin Travma Sonrası Stres Bozukluğu Üzerindeki Etkileri</h4>
+                            <p class="publication-description">Doğa temelli terapinin travma sonrası stres bozukluğu tedavisindeki etkinliğini araştıran randomize kontrollü çalışma. 80 katılımcı ile 12 haftalık program.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                                <span><i class="fas fa-building"></i> Journal of Clinical Psychology</span>
+                                <span><i class="fas fa-language"></i> İngilizce</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-download"></i>
+                                    PDF İndir
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Makale
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <div class="publication-year">2023</div>
+                            <h4 class="publication-title">Yetişkin Üstün Yeteneklilerin Kariyer Seçimlerinde Psikolojik Faktörler</h4>
+                            <p class="publication-description">Yetişkin üstün yeteneklilerin kariyer kararlarını etkileyen psikolojik faktörleri inceleyen nitel araştırma. 45 katılımcı ile derinlemesine görüşmeler.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz</span>
+                                <span><i class="fas fa-building"></i> Gifted Education International</span>
+                                <span><i class="fas fa-language"></i> İngilizce</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-download"></i>
+                                    PDF İndir
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Makale
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <div class="publication-year">2022</div>
+                            <h4 class="publication-title">Çocuklarda Kaygı ve Stres Yönetimi: Okul Temelli Müdahale Programı</h4>
+                            <p class="publication-description">İlkokul öğrencilerinde kaygı ve stres yönetimi için geliştirilen okul temelli müdahale programının etkinliğini değerlendiren çalışma. 200 öğrenci ile 6 aylık program.</p>
+                            <div class="publication-meta">
+                                <span><i class="fas fa-user"></i> Dr. Defne Yılmaz, Dr. Zeynep Demir</span>
+                                <span><i class="fas fa-building"></i> Çocuk ve Gençlik Ruh Sağlığı Dergisi</span>
+                                <span><i class="fas fa-language"></i> Türkçe</span>
+                            </div>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-download"></i>
+                                    PDF İndir
+                                </a>
+                                <a href="#" class="publication-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Makale
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DEİDA PSİKOLOJİ</h3>
+                    <p>Dr. Defne Yılmaz</p>
+                    <p>Uzman Psikolog</p>
+                    <p>30 yıllık deneyim ve uzmanlık</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim Bilgileri</h4>
+                    <p><i class="fas fa-envelope"></i> info@deidapsikoloji.com</p>
+                    <p><i class="fas fa-phone"></i> (+90) 555 123 45 67</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +90 555 123 45 67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Çanakkale, Türkiye</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hizmet Alanları</h4>
+                    <p><i class="fas fa-star"></i> Üstün Yetenekliler Danışmanlığı</p>
+                    <p><i class="fas fa-comments"></i> Psikolojik Danışma</p>
+                    <p><i class="fas fa-users"></i> Grupla Danışmanlık</p>
+                    <p><i class="fas fa-heart"></i> Stres ve Travma</p>
+                    <p><i class="fas fa-shield-alt"></i> Bağımlılık Danışmanlığı</p>
+                </div>
+                <div class="footer-map">
+                    <h4>Konum</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.4356179388883!2d26.410720675854147!3d40.15485377148293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b1a82cb7342d17%3A0x4223952002858bda!2s%C3%87anakkale%20Onsekiz%20Mart%20%C3%9Cniversitesi%20E%C4%9Fitim%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1754421432315!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DEİDA PSİKOLOJİ. Tüm hakları saklıdır. | Dr. Defne Yılmaz</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html> 
